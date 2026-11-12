@@ -16,3 +16,8 @@ Lo otro que molesta es que el controlador responde un 500 genérico. Un id que n
 
 11. Proponga una corrección mínima y mantenible. Puede entregar el método corregido o un diff/pseudodiff claro.
 java/src/main/java/soporte/SolicitudService.java
+
+Correciones minimas y mantenibles   
+- Manejo de excepciones: si la solicitud no existe, lanzo una excepción propia con el id SolicitudNoEncontradaException, que el controlador puede traducir a un 404. Esto es lo que arregla el incidente del log.
+- Si el cliente o su nombre vienen null, devuelvo el nombre en null. No me parece motivo para que falle toda la consulta.
+- Si la solicitud no tiene gestiones, devuelvo la solicitud con la fecha en null, porque es un caso normal del negocio.
